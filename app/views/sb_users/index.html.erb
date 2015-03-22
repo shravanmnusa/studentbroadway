@@ -1,0 +1,18 @@
+<% provide(:title, 'Broadway Celebrities') %>
+<h1><span class="label label-info">All Celebrities</h1>
+<%= will_paginate %>
+
+<ul class="users">
+  <% @sb_users.each do |user| %>
+    <li>
+     
+      <%= link_to user.name, user %>
+	  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+
+    </li>
+  <% end %>
+</ul>
+<%= will_paginate %>
