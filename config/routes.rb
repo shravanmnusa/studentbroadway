@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   
-  get 'sb_users/new'
-
-  root 'first_pages#home'
-  get 'faq' => 'first_pages#faq'
-
+	root 'first_pages#home'
+	get 'faq' => 'first_pages#faq'
+	get 'signup'=> 'sb_users#new'
+	resources :sb_users
 end
