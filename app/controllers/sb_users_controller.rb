@@ -17,8 +17,9 @@ class SbUsersController < ApplicationController
   def create
     @user = SbUser.new(user_params)
     if @user.save
-	  flash[:success] = "Welcome to the StudentBroadway!"
-      redirect_to @user
+	  @user.send_activation_email
+      flash[:info] = "Please check your email to activate your account."
+      redirect_to root_url
     else
       render 'new'
     end

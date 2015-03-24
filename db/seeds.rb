@@ -1,5 +1,7 @@
 SbUser.create!(name:  "Shravan",
-             email: "shravan@sbw.com",
+             email: "stoomula@sbw.com",
              password:              "foobar",
              password_confirmation: "foobar",
-             admin: true)
+             admin: true
+			 activated: true,
+             activated_at: Time.zone.now)

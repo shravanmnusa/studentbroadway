@@ -1,0 +1,10 @@
+<h1>Student Broadway</h1>
+
+<p>Hi <%= @user.name %>,</p>
+
+<p>
+Welcome to the Student Broadway! Click on the link below to activate your account:
+</p>
+
+<%= link_to "Activate", edit_sbuser_activate_url(@user.activation_token,
+                                                    email: @user.email) %>

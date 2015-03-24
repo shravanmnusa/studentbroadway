@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 	post   'login'   => 'sessions#create'
 	delete 'logout'  => 'sessions#destroy'
 	resources :sb_users
+	resources :sbuser_activate, only: [:edit]
+
 end

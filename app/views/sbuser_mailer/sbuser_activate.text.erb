@@ -1,0 +1,6 @@
+Hi <%= @user.name %>,
+
+Welcome to the Student Broadway! Click on the link below to activate your account:
+
+<%= edit_sbuser_activate_url(@user.activation_token,
+                                                    email: @user.email) %>
