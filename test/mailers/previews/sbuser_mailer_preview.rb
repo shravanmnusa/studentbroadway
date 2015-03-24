@@ -10,7 +10,10 @@ class SbuserMailerPreview < ActionMailer::Preview
 
   # Preview this email at http://localhost:3000/rails/mailers/sbuser_mailer/password_reset
   def password_reset
-    SbuserMailer.password_reset
+    user = SbUser.first
+    user.reset_token = SbUser.new_token
+    SbuserMailer.password_reset(user)
+
   end
 
 end
